@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB2CCB84-ECBB-453E-88C1-0C9F598DFF2F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HallData.EMS.Data</RootNamespace>
+    <AssemblyName>HallData.EMS.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Categories\PartyCategoryRepository.cs" />
+    <Compile Include="Categories\CategoryRepository.cs" />
+    <Compile Include="Categories\IPartyCategoryRepository.cs" />
+    <Compile Include="Parties\BusinessUnits\BusinessUnitRepository.cs" />
+    <Compile Include="ContactMechanisms\ContactMechanismHolderRepository.cs" />
+    <Compile Include="ContactMechanisms\ContactMechanismRepository.cs" />
+    <Compile Include="Parties\Customers\CustomerOrganizationRepository.cs" />
+    <Compile Include="Parties\Customers\CustomerPersonRepository.cs" />
+    <Compile Include="Parties\Customers\CustomerRepository.cs" />
+    <Compile Include="Parties\Employees\EmployeeRepository.cs" />
+    <Compile Include="EnumerationsRepository.cs" />
+    <Compile Include="Globalization\GlobalizationRepository.cs" />
+    <Compile Include="Parties\BusinessUnits\IBusinessUnitRepository.cs" />
+    <Compile Include="ContactMechanisms\IContactHolderRepository.cs" />
+    <Compile Include="ContactMechanisms\IContactMechanismRepository.cs" />
+    <Compile Include="Parties\Customers\ICustomerOrganizationRepository.cs" />
+    <Compile Include="Parties\Customers\ICustomerPersonRepository.cs" />
+    <Compile Include="Parties\Customers\ICustomerRespository.cs" />
+    <Compile Include="Parties\Employees\IEmployeeRepository.cs" />
+    <Compile Include="IEnumerationsRepository.cs" />
+    <Compile Include="Categories\ICategoryRepository.cs" />
+    <Compile Include="Parties\IOrganizationRepository.cs" />
+    <Compile Include="Parties\IPartyRepository.cs" />
+    <Compile Include="Parties\IPersonRepository.cs" />
+    <Compile Include="Products\BrandedProductRepository.cs" />
+    <Compile Include="Products\BrandRepository.cs" />
+    <Compile Include="Products\EventRepository.cs" />
+    <Compile Include="Products\IBrandedProductRepository.cs" />
+    <Compile Include="Products\IBrandRepository.cs" />
+    <Compile Include="Products\IEventRepository.cs" />
+    <Compile Include="Products\IIssueRepository.cs" />
+    <Compile Include="Products\INewsletterRepository.cs" />
+    <Compile Include="Products\IProductBaseRepository.cs" />
+    <Compile Include="Parties\Users\IUserRepository.cs" />
+    <Compile Include="Parties\OrganizationRepository.cs" />
+    <Compile Include="ContactMechanisms\PartyContactMechanismRepository.cs" />
+    <Compile Include="Parties\PartyRepository.cs" />
+    <Compile Include="Parties\PersonRepository.cs" />
+    <Compile Include="ContactMechanisms\ProductContactMechanismRepository.cs" />
+    <Compile Include="Products\IProductGenericRepository.cs" />
+    <Compile Include="Products\IProductRepository.cs" />
+    <Compile Include="Products\IPublicationRepository.cs" />
+    <Compile Include="Products\ISessionRepository.cs" />
+    <Compile Include="Products\IssueRepository.cs" />
+    <Compile Include="Products\ITrackRepository.cs" />
+    <Compile Include="Products\NewsletterRepository.cs" />
+    <Compile Include="Products\ProductBaseRepository.cs" />
+    <Compile Include="Products\ProductRepository.cs" />
+    <Compile Include="Products\PublicationRepository.cs" />
+    <Compile Include="Products\SessionRepository.cs" />
+    <Compile Include="Products\TrackRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Session\SessionRepository.cs" />
+    <Compile Include="UI\IPersonalizationRepository.cs" />
+    <Compile Include="UI\Mocks\MockPersonalizationRepository.cs" />
+    <Compile Include="UI\PerrsonalizationRepository.cs" />
+    <Compile Include="Parties\Users\UserRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HallData.ApplicationViews\HallData.ApplicationViews.csproj">
+      <Project>{d937155b-2377-40f4-946c-316458593915}</Project>
+      <Name>HallData.ApplicationViews</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HallData.Business.Contracts\HallData.Business.Contracts.csproj">
+      <Project>{d6b3262c-0538-4038-aab1-93db13af14a6}</Project>
+      <Name>HallData.Business.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HallData.Business\HallData.Business.csproj">
+      <Project>{89c88858-6969-4bd9-a7f7-ebf4ec55bd21}</Project>
+      <Name>HallData.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HallData.Data\HallData.Data.csproj">
+      <Project>{f3118e72-d1ae-44dd-99a1-a5744ac10d7a}</Project>
+      <Name>HallData.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HallData.EMS.ApplicationViews\HallData.EMS.ApplicationViews.csproj">
+      <Project>{54e4a240-9f00-4339-b491-db6af7ecc669}</Project>
+      <Name>HallData.EMS.ApplicationViews</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HallData.Exceptions\HallData.Exceptions.csproj">
+      <Project>{2eeba91e-2303-462d-8cdd-f29b6ec7b3a4}</Project>
+      <Name>HallData.Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HallData.Globalization.Core\HallData.Globalization.Core.csproj">
+      <Project>{6a8572c6-b861-4f25-b7c1-95fb1abf3317}</Project>
+      <Name>HallData.Globalization.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HallData.Globalization\HallData.Globalization.csproj">
+      <Project>{fcfc0572-bc6b-4770-ba79-5274e8f5a52b}</Project>
+      <Name>HallData.Globalization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HallData.Models\HallData.Models.csproj">
+      <Project>{bdc14e4b-6cc5-4d8a-a502-6953985d66cf}</Project>
+      <Name>HallData.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HallData.Repository\HallData.Repository.csproj">
+      <Project>{c44c35f9-ab4a-42c8-8baa-bf43fac783cf}</Project>
+      <Name>HallData.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HallData.Utilities\HallData.Utilities.csproj">
+      <Project>{d1185fa4-88b7-4da7-9b73-82c65a2f0b5c}</Project>
+      <Name>HallData.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="_ClassDiagram_Client.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mocks\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

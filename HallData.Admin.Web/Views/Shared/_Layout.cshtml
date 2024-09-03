@@ -1,0 +1,112 @@
+﻿@using System.Web.Helpers
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+	<meta charset="utf-8" />
+	<title>@ViewBag.Title</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+	<link rel="icon" href="~/favicon.png" type="image/x-icon" />
+
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+	@Styles.Render("~/bundles/css")
+	<!-- ================== END BASE CSS STYLE ================== -->
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+	@RenderSection("styles", required: false)
+	<!-- ================== END PAGE LEVEL STYLE ================== -->
+
+	<script type="text/javascript">
+		var serviceLocation = '@System.Configuration.ConfigurationManager.AppSettings["HallData.API.ServiceLocation"]';
+		var websiteLocation = '@System.Configuration.ConfigurationManager.AppSettings["HallData.EMS.WebsiteLocation"]';
+        var emsServiceLocation = '@System.Configuration.ConfigurationManager.AppSettings["HallData.API.ServiceLocation"]';
+		var loginPageUrl = '@Url.Content("~/login/")';
+		var authenticationProvider;
+	</script>
+	@Scripts.Render("~/bundles/knockout")
+	@Scripts.Render("~/bundles/angular")
+	@Scripts.Render("~/bundles/linq")
+	@Scripts.Render("~/bundles/gridRequirements")
+	@Scripts.Render("~/bundles/framework")
+	@Scripts.Render("~/bundles/hdsScripts")
+	@Scripts.Render("~/bundles/app/shared")
+	<script type="text/javascript">
+		HallData.EMS.Shared.init();
+	</script>
+	@Scripts.Render("~/bundles/app/menu")
+	@Scripts.Render("~/bundles/app/perspectives")
+
+</head>
+
+<body class="flat-black">
+	@if (TempData["message.subject"] != null)
+	{
+		<script>
+			showMessage('@TempData["message.type"]', '@TempData["message.subject"]', '@TempData["message.body"]');
+		</script>
+	}
+
+	<script type="text/javascript">
+		var routeValueDictionary = JSON.parse('@Html.Raw(Json.Encode(ViewBag.RouteValueDictionary))');
+		var perspectiveValueDictionary = "Admin";
+	</script>
+
+	<!-- begin #page-loader -->
+	<div id="page-loader" class="fade in"><span class="spinner"></span></div>
+	<!-- end #page-loader -->
+	<!-- begin #page-container -->
+	<div id="page-container" class="fade page-sidebar-fixed page-header-fixed" ng-app="ems" ng-controller="sharedController">
+		<!-- begin #header -->
+		@Html.Partial("Header")
+		<!-- end #header -->
+		<!-- begin #sidebar -->
+		@Html.Partial("~/Views/Shared/Menu.cshtml")
+		<!-- end #sidebar -->
+		<!-- begin #content -->
+		<div>
+			<div class="" ng-show="isSignedIn">
+				@RenderBody()
+			</div>
+			<div ng-hide="isSignedIn">
+				Authenticating
+			</div>
+		</div>
+		<!-- end #content -->
+		<!-- begin #footer
+		<div id="footer" class="footer"></div>
+		end #footer -->
+		<!-- begin scroll to top btn -->
+		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top">
+			<i class="fa fa-angle-up"></i>
+		</a>
+		<!-- end scroll to top btn -->
+	</div>
+
+	@Html.Partial("_GridTemplates")
+
+	<!-- end page container -->
+	<!-- ================== BEGIN BASE JS ================== -->
+	@Scripts.Render("~/bundles/base-js-1")
+	@{HtmlHelper.UnobtrusiveJavaScriptEnabled = true;}
+	<!--[if lt IE 9]>
+	@Scripts.Render("~/bundles/crossbrowserjs")
+	<![endif]-->
+	@Scripts.Render("~/bundles/base-js-2")
+	<!-- ================== END BASE JS ================== -->
+	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	@RenderSection("scripts", required: false)
+	<!-- ================== END PAGE LEVEL JS ================== -->
+
+	<script src="~/Scripts/libraries/template/apps.js"></script>
+
+</body>
+</html>

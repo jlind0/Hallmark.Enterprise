@@ -1,0 +1,117 @@
+﻿@{
+	ViewBag.Title = "Add Interface";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles {
+	<link href="~/Content/plugins/parsley/src/parsley.css" rel="stylesheet" />
+	@*<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">*@
+	<link href="~/Content/css/hds-select2.css" rel="stylesheet" />
+}
+
+@section scripts{
+	<script type="text/javascript" src="~/Scripts/app/services/interface/classes/InterfaceService.js"></script>
+	
+	<script type="text/javascript" src="~/Scripts/app/interface/controllers/InterfaceAddController.js"></script>
+	<script type="text/javascript" src="~/Scripts/app/interface/directives/formatCode.js"></script>
+	@*<script type="text/javascript" src="~/Scripts/app/interface/directives/generateCode.js"></script>*@
+	<script type="text/javascript" src="~/Scripts/app/interface/initializers/InterfaceAdd.js"></script>
+
+	@*<script type="text/javascript" src="~/Scripts/libraries/angular-ui-select/select.js"></script>*@
+}
+
+<!--validation-->
+<script type="text/ng-template" id="validation">
+	<ng-message when="minlength">This field is too short</ng-message>
+	<ng-message when="maxlength">This field is too long</ng-message>
+	<ng-message when="url" class="text-primary">Enter a valid url ex. http://www.halldata.com</ng-message>
+	<ng-message when="email">Enter a valid email address ex. my_email@domain.com</ng-message>
+</script>
+
+@Html.Partial("_ActiveMenuItem", "Interfaces")
+
+<div id="content" class="content">
+	<div ng-controller="interfaceAddController">
+		<div class="row m-b-10">
+			<div class="col-sm-8">
+				<h1 class="page-header">
+					<i class="ion-compass m-r-5"></i>
+					@ViewBag.Title
+				</h1>
+			</div>
+		</div>
+		<div class="panel panel-inverse panel-loading form-horizontal">
+			<div class="panel-heading">
+				<span class="panel-title">General Information</span>
+				<div class="pull-right">
+					@Html.Partial("~/Views/Shared/_PanelControls.cshtml")
+				</div>
+			</div>
+			<div id="interfaceMainInfo" class="panel-body" data-validation="name">
+				<form name="addInterfaceForm" ng-submit="vm.add(addInterfaceForm.$valid)" novalidate>
+
+					<div class="form-group">
+						<label for="inputName" class="col-sm-2 control-label">Name *</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="inputName" name="Name" placeholder="Name (Required)" value="" autofocus ng-model="addInterface.Name" ng-maxlength="500" ng-class="{ 'parsley-error': addInterfaceForm.Name.$dirty && addInterfaceForm.Name.$invalid||addInterfaceForm.$submitted && addInterfaceForm.Name.$invalid}" required>
+							<!--validation-->
+							<ng-messages for="addInterfaceForm.Name.$error" class="parsley-errors-list filled parsley-required" role="alert">
+								<div ng-include src="'validation'"></div>
+							</ng-messages>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="inputDisplayName" class="col-sm-2 control-label">Display Name *</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="inputDisplayName" name="DisplayName" placeholder="Display Name (Required)" value="" autofocus format-code ng-model="addInterface.DisplayName" ng-trim="false" ng-maxlength="500" ng-class="{ 'parsley-error': addInterfaceForm.DisplayName.$dirty && addInterfaceForm.DisplayName.$invalid||addInterfaceForm.$submitted && addInterfaceForm.DisplayName.$invalid}" required>
+							<!--validation-->
+							<ng-messages for="addInterfaceForm.DisplayName.$error" class="parsley-errors-list filled parsley-required" role="alert">
+								<div ng-include src="'validation'"></div>
+							</ng-messages>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="inputRelatedInterfaces" class="col-sm-2 control-label">Related Interfaces</label>
+						<div class="col-sm-10">
+							<ui-select multiple ng-model="addInterface.RelatedInterfaces" theme="select2" ng-disabled="false" class="multiple-select2" style="min-width: 100%;">
+								<ui-select-match placeholder="Select related interfaces...">{{$item.Name}}</ui-select-match>
+								<ui-select-choices repeat="item.Name as item in addInterface.RelatedInterfaces">
+									<div ng-bind-html="item.Name | highlight: $select.search"></div>
+								</ui-select-choices>
+							</ui-select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="inputInterfaceAttributes" class="col-sm-2 control-label">Attributes</label>
+						<div class="col-sm-10">
+							<div class="input-group">
+								<ui-select multiple tagging="tagTransform" ng-model="addInterface.Attributes" theme="select2" ng-disabled="true" class="multiple-select2" style="min-width: 100%;">
+									<ui-select-match placeholder="Add Attributes...">{{$item.Name}}</ui-select-match>
+									<ui-select-choices repeat="item.Name as item in addInterface.Attributes">
+										<div ng-bind-html="item.Name | highlight: $select.search">{{$item.Name}}</div>
+									</ui-select-choices>
+								</ui-select>
+								<div class="input-group-btn">
+									<button type="button" class="btn btn-info"><i class="fa fa-plus m-r-5"></i> Add Attribute</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group dark">
+						<div class="col-sm-offset-2 col-sm-10">
+							<div class="btn-group">
+								<button type="submit" class="btn btn-primary btn-flat" ng-disabled="isSaving" data-loading-text="<i class='fa fa-fw fa-spinner fa-spin'></i> Saving...">Add Interface</button>
+							</div>
+							&nbsp;
+							<a href="@Html.Raw(Url.RouteUrl("InterfacesDisplay"))" class="btn btn-default reset">Cancel</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

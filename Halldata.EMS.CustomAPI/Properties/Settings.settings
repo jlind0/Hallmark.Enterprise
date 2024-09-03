@@ -1,0 +1,20 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Halldata.EMS.CustomAPI.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="db2connectionstring" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Provider=DB2OLEDB;Data Source=DBS-HDS-01;Password=pr050018;User ID=SQLSPROD;Initial Catalog=S10CBA7R;Network Address=AS400.HALLDATA.COM;Package Collection=PRODCOLL;Default Schema=PRODCOLL;Default Qualifier=PRODCOLL;DBMS Platform=DB2/AS400&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Provider=DB2OLEDB;Data Source=DBS-HDS-01;Password=pr050018;User ID=SQLSPROD;Initial Catalog=S10CBA7R;Network Address=AS400.HALLDATA.COM;Package Collection=PRODCOLL;Default Schema=PRODCOLL;Default Qualifier=PRODCOLL;DBMS Platform=DB2/AS400</Value>
+    </Setting>
+    <Setting Name="mysqlconnectionstring" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">server=ods04.prd.halldata.local;uid=dragonapi;password=TFufL-2xfCPD68j=;database=dragon;Allow Zero Datetime=true;</Value>
+    </Setting>
+    <Setting Name="API_Key" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">AvvD5Tt6Uy78jH1277Df3F</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

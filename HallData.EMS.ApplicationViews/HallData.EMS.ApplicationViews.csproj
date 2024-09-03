@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{54E4A240-9F00-4339-B491-DB6AF7ECC669}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HallData.EMS.ApplicationViews</RootNamespace>
+    <AssemblyName>HallData.EMS.ApplicationViews</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\HallData.EMS.ApplicationViews.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Results\Categories\PartyCategory.cs" />
+    <Compile Include="Results\Categories\IPartyCategory.cs" />
+    <Compile Include="CategoryType.cs" />
+    <Compile Include="ContactMechanisms\contactmechanism.cs" />
+    <Compile Include="ContactMechanisms\ContactMechanismHolderDefaultViewAttribute.cs" />
+    <Compile Include="ContactMechanisms\contactmechanismtype.cs" />
+    <Compile Include="ContactMechanisms\ContactMechanismTypeAttribute.cs" />
+    <Compile Include="ContactMechanisms\IContactMechanism.cs" />
+    <Compile Include="ContactMechanisms\IContactMechanismHolder.cs" />
+    <Compile Include="ContactMechanisms\PartyContactMechanism\IPrimaryPartyContactMechanism.cs" />
+    <Compile Include="ContactMechanisms\PartyContactMechanism\partycontactmechanism.cs" />
+    <Compile Include="ContactMechanisms\PartyContactMechanism\PrimaryPartyContactMechanism.cs" />
+    <Compile Include="ContactMechanisms\ProductContactMechanism\IPrimaryProductContactMechanism.cs" />
+    <Compile Include="ContactMechanisms\ProductContactMechanism\PrimaryProductContactMechanism.cs" />
+    <Compile Include="ContactMechanisms\ProductContactMechanism\productcontactmechanism.cs" />
+    <Compile Include="ContactType.cs" />
+    <Compile Include="Results\Categories\Category.cs" />
+    <Compile Include="Results\Categories\ICategory.cs" />
+    <Compile Include="Results\Parties\Contact\EmployeeContact.cs" />
+    <Compile Include="Results\Parties\Contact\IContact.cs" />
+    <Compile Include="Results\Parties\Contact\IEmployeeContact.cs" />
+    <Compile Include="Results\Parties\Contact\ISupplierEmployeeContact.cs" />
+    <Compile Include="Results\Parties\Contact\IThirdPartyEmployeeContact.cs" />
+    <Compile Include="Results\Parties\Contact\Product\IProductContact.cs" />
+    <Compile Include="Results\Parties\Contact\Product\IProductEmployeeContact.cs" />
+    <Compile Include="Results\Parties\Contact\Product\IProductSupplierEmployeeContact.cs" />
+    <Compile Include="Results\Parties\Contact\Product\IProductThirdPartyEmployeeContact.cs" />
+    <Compile Include="Results\Parties\Contact\Product\ProductEmployeeContact.cs" />
+    <Compile Include="Results\Parties\Contact\Product\ProductSupplierEmployeeContact.cs" />
+    <Compile Include="Results\Parties\Contact\Product\ProductThirdPartyEmployeeContact.cs" />
+    <Compile Include="Results\Parties\Contact\SupplierEmployeeContact.cs" />
+    <Compile Include="Results\Parties\Contact\ThirdPartyEmployeeContact.cs" />
+    <Compile Include="Results\Parties\Employees\ISupplierEmployee.cs" />
+    <Compile Include="Results\Parties\Employees\IThirdPartyEmployee.cs" />
+    <Compile Include="Results\Parties\Employees\SupplierEmployee.cs" />
+    <Compile Include="Results\Parties\IParty.cs" />
+    <Compile Include="Results\Parties\Customers\Customer.cs" />
+    <Compile Include="DeliveryMethodType.cs" />
+    <Compile Include="Enums\CategoryType.cs" />
+    <Compile Include="Enums\ContactMechanismType.cs" />
+    <Compile Include="Enums\DeliveryMethodType.cs" />
+    <Compile Include="Enums\FrequencyType.cs" />
+    <Compile Include="Enums\MechanismType.cs" />
+    <Compile Include="Enums\PartyType.cs" />
+    <Compile Include="Enums\ProductType.cs" />
+    <Compile Include="Enums\Roles.cs" />
+    <Compile Include="Enums\StatusType.cs" />
+    <Compile Include="Frequency.cs" />
+    <Compile Include="MechanismType.cs" />
+    <Compile Include="ProductType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Results\Parties\BusinessUnits\BusinessUnit.cs" />
+    <Compile Include="Results\Parties\Customers\CustomerOrganization.cs" />
+    <Compile Include="Results\Parties\Customers\CustomerPerson.cs" />
+    <Compile Include="Results\Parties\Customers\ICustomer.cs" />
+    <Compile Include="Results\Parties\BusinessUnits\IBusinessUnit.cs" />
+    <Compile Include="Results\Parties\Customers\ICustomerOrganization.cs" />
+    <Compile Include="Results\Parties\Customers\ICustomerPerson.cs" />
+    <Compile Include="Results\Parties\Employees\IEmployee.cs" />
+    <Compile Include="Results\Parties\IOrganization.cs" />
+    <Compile Include="Results\Parties\IPartyGeneric.cs" />
+    <Compile Include="Results\Parties\IPerson.cs" />
+    <Compile Include="Results\Parties\PartyGeneric.cs" />
+    <Compile Include="Results\Parties\Suppliers\ISupplier.cs" />
+    <Compile Include="Results\Parties\Suppliers\Supplier.cs" />
+    <Compile Include="Results\Parties\ThirdParty\IThirdParty.cs" />
+    <Compile Include="Results\Parties\ThirdParty\ThirdParty.cs" />
+    <Compile Include="Results\Products\Brand.cs" />
+    <Compile Include="Results\Products\BrandedProduct.cs" />
+    <Compile Include="Results\Products\Event.cs" />
+    <Compile Include="Results\Products\IBrand.cs" />
+    <Compile Include="Results\Products\IBrandedProduct.cs" />
+    <Compile Include="Results\Products\IEvent.cs" />
+    <Compile Include="Results\Products\IIssue.cs" />
+    <Compile Include="Results\Products\INewsletter.cs" />
+    <Compile Include="Results\Products\IProduct.cs" />
+    <Compile Include="Results\Products\IProductBase.cs" />
+    <Compile Include="Results\Parties\Users\IUser.cs" />
+    <Compile Include="Results\Parties\Party.cs" />
+    <Compile Include="Results\Parties\Employees\Employee.cs" />
+    <Compile Include="Results\Parties\Organization.cs" />
+    <Compile Include="PartyType.cs" />
+    <Compile Include="Results\Parties\Person.cs" />
+    <Compile Include="Results\Products\IProductGeneric.cs" />
+    <Compile Include="Results\Products\IPublication.cs" />
+    <Compile Include="Results\Products\ISession.cs" />
+    <Compile Include="Results\Products\Issue.cs" />
+    <Compile Include="Results\Products\ITrack.cs" />
+    <Compile Include="Results\Products\Newsletter.cs" />
+    <Compile Include="Results\Products\Product.cs" />
+    <Compile Include="Results\Products\ProductBase.cs" />
+    <Compile Include="Results\Parties\Users\User.cs" />
+    <Compile Include="Results\Products\ProductGeneric.cs" />
+    <Compile Include="Results\Products\Publication.cs" />
+    <Compile Include="Results\Products\Session.cs" />
+    <Compile Include="Results\Products\Track.cs" />
+    <Compile Include="Role.cs" />
+    <Compile Include="StatusType.cs" />
+    <Compile Include="TierType.cs" />
+    <Compile Include="TitleType.cs" />
+    <Compile Include="UI\ApplicationView.cs" />
+    <Compile Include="UI\ApplicationViewColumn.cs" />
+    <Compile Include="UI\DataView.cs" />
+    <Compile Include="UI\DataViewColumn.cs" />
+    <Compile Include="UI\Entity.cs" />
+    <Compile Include="UI\EntityColumn.cs" />
+    <Compile Include="UI\Enums\FilterOperationOptions.cs" />
+    <Compile Include="UI\Enums\SortDirectionOptions.cs" />
+    <Compile Include="UI\Filter.cs" />
+    <Compile Include="UI\FilterOperationOption.cs" />
+    <Compile Include="UI\FilterType.cs" />
+    <Compile Include="UI\PageOptionHolder.cs" />
+    <Compile Include="UI\Template.cs" />
+    <Compile Include="UI\TemplateType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HallData.EMS.ApplicationViews.nuspec" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HallData.ApplicationViews\HallData.ApplicationViews.csproj">
+      <Project>{d937155b-2377-40f4-946c-316458593915}</Project>
+      <Name>HallData.ApplicationViews</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HallData.Exceptions\HallData.Exceptions.csproj">
+      <Project>{2eeba91e-2303-462d-8cdd-f29b6ec7b3a4}</Project>
+      <Name>HallData.Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HallData.Utilities\HallData.Utilities.csproj">
+      <Project>{d1185fa4-88b7-4da7-9b73-82c65a2f0b5c}</Project>
+      <Name>HallData.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HallData.Validation\HallData.Validation.csproj">
+      <Project>{b22a0aa4-f6a4-4bc0-9968-3d52fcfffa59}</Project>
+      <Name>HallData.Validation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

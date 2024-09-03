@@ -1,0 +1,88 @@
+﻿@{
+	ViewBag.Title = "Add Data View Column";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles{
+	<link href="~/Content/plugins/DataTables/css/data-table.css" rel="stylesheet"/>
+	<link href="~/Content/css/pages/DisplayList.css" rel="stylesheet"/>
+}
+
+@section scripts{
+	<script type="text/javascript" src="~/Scripts/app/services/dataviews/classes/DataViewService.js"></script>
+
+	<script type="text/javascript" src="~/Scripts/app/dataviews/controllers/DataViewAddController.js"></script>
+	@*<script type="text/javascript" src="~/Scripts/app/dataviews/directives/formatCode.js"></script>
+		<script type="text/javascript" src="~/Scripts/app/dataviews/directives/generateCode.js"></script>*@
+	<script type="text/javascript" src="~/Scripts/app/dataviews/initializers/DataViewAdd.js"></script>
+}
+
+@Html.Partial("_ActiveMenuItem", "DataViews")
+
+<div id="content" class="content">
+	<div ng-controller="dataViewAddController">
+		<div class="row m-b-10">
+			<div class="col-sm-8">
+				<h1 class="page-header">
+					<i class="ion-grid m-r-5"></i>
+					@ViewBag.Title
+				</h1>
+			</div>
+		</div>
+		<div class="panel panel-inverse panel-loading form-horizontal">
+			<div class="panel-heading">
+				<span class="panel-title">General Information</span>
+				<div class="pull-right">
+					@Html.Partial("~/Views/Shared/_PanelControls.cshtml")
+				</div>
+			</div>
+			<div id="DataViewMainInfo" class="panel-body" data-validation="name">
+				<form name="addDataView" ng-submit="vm.add(addDataView.$valid)" novalidate>
+
+					<div class="form-group">
+						<label for="inputName" class="col-sm-2 control-label">Name *</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="inputName" name="Name" size="4" placeholder="Name (Required)" value="" autofocus ng-model="addDataView.Name" ng-maxlength="500" ng-class="{ 'parsley-error': addDataView.Name.$dirty && addDataView.Name.$invalid||addDataView.$submitted && addDataView.Name.$invalid}" required>
+							<!--validation-->
+							<ng-messages for="addDataView.Name.$error" class="parsley-errors-list filled parsley-required" role="alert">
+								<div ng-include src="'validation'"></div>
+							</ng-messages>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="inputDataViewId" class="col-sm-2 control-label">Data View ID *</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="inputDataViewId" name="DataViewId" placeholder="Data View ID (Required)" value="" ng-model="addDataView.DataViewId" ng-maxlength="500" ng-class="{ 'parsley-error': addDataView.DataViewId.$dirty && addDataView.DataViewId.$invalid||addDataView.$submitted && addDataView.DataViewId.$invalid}" required>
+							<!--validation-->
+							<ng-messages for="addDataView.DataViewId.$error" class="parsley-errors-list filled parsley-required" role="alert">
+								<div ng-include src="'validation'"></div>
+							</ng-messages>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="inputRelatedDataViews" class="col-sm-2 control-label">Related Data Views</label>
+						<div class="col-sm-10">
+							<select class="form-control" id="inputRelatedDataViews" name="RelatedDataViews" value="" multiple ng-model="addDataView.RelatedDataViews" ng-options="addDataView.RelatedDataViews as RelatedDataViews.Name for RelatedDataView in relatedDataViews"></select>
+							<!--validation-->
+							<ng-messages for="addDataView.RelatedDataViews.$error" class="parsley-errors-list filled parsley-required" role="alert">
+								<div ng-include src="'validation'"></div>
+							</ng-messages>
+						</div>
+					</div>
+
+					<div class="form-group dark">
+						<div class="col-sm-offset-2 col-sm-10">
+							<div class="btn-group">
+								<button type="submit" class="btn btn-primary btn-flat" ng-disabled="isSaving" data-loading-text="<i class='fa fa-fw fa-spinner fa-spin'></i> Saving...">Add Data View</button>
+							</div>
+							&nbsp;
+							<a href="@Html.Raw(Url.RouteUrl("DataViewDetailsDisplay"))" class="btn btn-default reset">Cancel</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

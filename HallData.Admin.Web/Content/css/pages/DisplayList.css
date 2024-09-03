@@ -1,0 +1,17 @@
+﻿@charset "UTF-8";
+
+#grid-panel-body td {
+	/*word-break: break-all;*/
+	white-space: nowrap;
+}
+
+.text-lighter-gray {
+	color:#bbbdc0
+}
+
+.grid-panel-heading {
+	line-height: 37px;
+	font-size: 20px;
+	border-bottom: 1px solid #e6e7e8
+
+}

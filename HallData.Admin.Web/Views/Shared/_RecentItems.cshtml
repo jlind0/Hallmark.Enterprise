@@ -1,0 +1,23 @@
+﻿		<!-- begin panel -->
+<div class="panel panel-inverse" data-sortable-id="index-1">
+	<div class="panel-heading">
+		<h4 class="panel-title">
+			Recent Items
+		</h4>
+	</div>
+	<div class="list-group">
+		<a href="@HttpRuntime.AppDomainAppVirtualPath" class="list-group-item list-group-item-inverse text-ellipsis">
+			<span class="badge badge-primary">Home</span>
+			Home
+		</a>
+		<a href="@Url.RouteUrl("DisplayCustomers")" class="list-group-item list-group-item-inverse text-ellipsis">
+			<span class="badge badge-primary">Customers</span>
+			Display Customers
+		</a>
+		<a href="@Url.RouteUrl("Samples")" class="list-group-item list-group-item-inverse text-ellipsis">
+			<span class="badge badge-primary">Samples</span>
+			Samples
+		</a>
+	</div>
+</div>
+<!-- end panel -->

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Removed dependencies dependency.</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <dependencies>
+      <dependency id="HallData.ApplicationViews" version="1.2.0"/>
+      <dependency id="HallData.Business" version="1.0.0.0"/>
+      <dependency id="HallData.Business.Contracts" version="1.1.0"/>
+      <dependency id="HallData.Exceptions" version="1.0.0.0"/>
+      <dependency id="HallData.Repository" version="1.2.0"/>
+      <dependency id="HallData.Translation.Core" version="1.0.0.0"/>
+      <dependency id="HallData.Web.Base" version="1.0.0.0"/>
+      <dependency id="HallData.Utilities" version="1.2.0"/>
+    </dependencies>
+  </metadata>
+</package>

@@ -1,0 +1,97 @@
+﻿.select2-results li:last-child {
+	border-top: 1px solid #e7e7e7;
+	}
+
+/* PRODUCT IMAGE STYLES */
+#img-print-container {
+	position: relative;
+	max-width: 220px;
+	margin: 0 auto;
+	}
+
+#img-print-container img {
+	position: relative;
+	box-shadow: -1px 1px 8px #222;
+	}
+
+#img-print-container img:before, #img-print-container img:after {
+	position: absolute;
+	}
+
+#img-print-container .curl {
+	width: 15.65217391304348%;
+	height: 12%;
+	bottom: 0;
+	right: 0;
+	background: url("assets/images/hds-custom/icons/64/page-curl.png") no-repeat bottom right;
+	background-size: cover;
+	position: absolute;
+	z-index: 1000;
+	}
+
+#img-digital-container {
+	position: relative;
+	max-width: 220px;
+	margin: 0 auto;
+	}
+
+#img-digital-container img {
+	box-sizing: border-box;
+	border-width: .8em .8em 1.6em .8em;
+	border-style: solid;
+	border-top-color: #111;
+	border-right-color: #111;
+	border-bottom-color: #111;
+	border-left-color: #111;
+	-moz-border-radius: .5em;
+	-webkit-border-radius: .5em;
+	border-radius: .5em;
+	box-shadow: -1px 1px 8px #222;
+	}
+
+#img-digital-container .digital-button {
+	position: absolute;
+	bottom: .5em;
+	margin-left: -.5em;
+	left: 50%;
+	right: 50%;
+	width: .8em;
+	height: .8em;
+	background: #333;
+	-moz-border-radius: 5em;
+	-webkit-border-radius: 5em;
+	border-radius: 5em;
+	}
+
+#img-both-container {
+	position: relative;
+	max-width: 220px;
+	margin: 0 auto;
+	}
+
+
+#img-both-container img.both-print {
+	left: 5px;
+	top: 10px;
+	box-shadow: -1px 1px 8px #222;
+	}
+
+#img-both-container img.both-digital {
+	box-sizing: border-box;
+	border-width: 1em 1em 2em 1em;
+	border-style: solid;
+	border-top-color: #111;
+	border-right-color: #111;
+	border-bottom-color: #111;
+	border-left-color: #111;
+	-moz-border-radius: .5em;
+	-webkit-border-radius: .5em;
+	border-radius: .5em;
+	-ms-transform: rotate(-7deg); /* IE 9 */
+	-webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
+	transform: rotate(-7deg);
+	right: 5px;
+	top: 10px;
+	box-shadow: -1px 1px 8px #222;
+	}
+/* /PRODUCT IMAGE STYLES */

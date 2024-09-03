@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="HallData.EMS.Data.ClientRepository">
+    <Position X="0.5" Y="48.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>ClientRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HallData.EMS.Data.OrganizationRepository&lt;TKey, TOrganizationResult, TOrganizationBase&gt;">
+    <Position X="2" Y="46.5" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OrganizationRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HallData.EMS.Data.OrganizationRepository">
+    <Position X="4.25" Y="48.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OrganizationRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HallData.EMS.Data.PartyRepository&lt;TKey, TPartyResult, TPartyBase&gt;">
+    <Position X="4.25" Y="41.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAAAgAAICAgAAAQAAAAAIIgAgACAAAABAgAEAAA=</HashCode>
+      <FileName>PartyRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HallData.EMS.Data.PartyRepository">
+    <Position X="8.75" Y="46.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PartyRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HallData.Repository.DeletableRepository&lt;TKey, TView, TViewBase&gt;">
+    <Position X="4.5" Y="37.25" Width="3" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HallData.Repository.Repository&lt;TKey, TView, TViewBase&gt;">
+    <Position X="4.75" Y="32.5" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HallData.Repository.ReadOnlyRepository&lt;TKey, TView&gt;">
+    <Position X="5" Y="28.25" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HallData.Repository.ReadOnlyRepository">
+    <Position X="5.5" Y="24" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HallData.Repository.Repository">
+    <Position X="5.25" Y="18.5" Width="2.5" />
+    <NestedTypes>
+      <Struct Name="HallData.Repository.Repository.ViewResult" Collapsed="true">
+        <TypeIdentifier />
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="5.75" Y="17.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="HallData.EMS.Data.BusinessUnitRepository" Collapsed="true">
+    <Position X="9.25" Y="49" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessUnitRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="HallData.EMS.Data.IClientRepository">
+    <Position X="2.5" Y="15.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>IClientRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HallData.EMS.Data.IOrganizationRepository&lt;TKey, TOrganizationResult, TOrganizationBase&gt;">
+    <Position X="4.25" Y="13.5" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IOrganizationRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HallData.EMS.Data.IOrganizationRepository">
+    <Position X="6.5" Y="15.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IOrganizationRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HallData.EMS.Data.IPartyRepository&lt;TKey, TPartyResult, TPartyBase&gt;">
+    <Position X="6.25" Y="10.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAgAAACAAAAAQAAAAAIIAAAACAAAAAAgAEAAA=</HashCode>
+      <FileName>IPartyRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HallData.EMS.Data.IPartyRepository">
+    <Position X="11.25" Y="13.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IPartyRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HallData.Repository.IDeletableRepository&lt;TKey, TView, TViewBase&gt;">
+    <Position X="8.75" Y="4.5" Width="4" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="HallData.Repository.IRepository&lt;TKey, TView, TViewBase&gt;">
+    <Position X="5" Y="7.25" Width="2.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="HallData.Repository.IReadOnlyRepository&lt;TKey, TView&gt;">
+    <Position X="0.5" Y="7.25" Width="3.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="HallData.Repository.IReadOnlyRepository">
+    <Position X="4.75" Y="2.25" Width="3.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="HallData.Repository.IRepository">
+    <Position X="5.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="HallData.EMS.Data.IBusinessUnitRepository" Collapsed="true">
+    <Position X="11" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IBusinessUnitRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,144 @@
+﻿@{
+	ViewBag.Title = "Interface Details";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles{
+	<link href="~/Content/plugins/DataTables/css/data-table.css" rel="stylesheet"/>
+	<link href="~/Content/css/pages/DisplayList.css" rel="stylesheet"/>
+}
+
+@section scripts{
+	<script type="text/javascript" src="~/Scripts/app/services/interface/classes/InterfaceService.js"></script>
+	<script type="text/javascript" src="~/Scripts/app/services/interface/classes/InterfaceAttributeService.js"></script>
+
+	<script type="text/javascript" src="~/Scripts/app/services/interface/classes/InterfaceAttributeRecursiveGrid.js"></script>
+
+	<script type="text/javascript" src="~/Scripts/app/interface/models/InterfaceAttributeGridModel.js"></script>
+
+	<script type="text/javascript" src="~/Scripts/app/interface/controllers/InterfaceDisplayController.js"></script>
+	<script type="text/javascript" src="~/Scripts/app/interface/initializers/InterfaceDisplay.js"></script>
+}
+
+@Html.Partial("_ActiveMenuItem", "Interfaces")
+
+<div id="content" class="content">
+	<div ng-controller="interfaceDisplayController">
+		<div class="row m-b-10">
+			<div class="col-sm-8">
+				<h1 class="page-header">
+					<i class="ion-compass m-r-5"></i>
+					<span ng-bind="interfaceObj.DisplayName"></span>
+				</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="unsortable">
+					<div class="panel panel-inverse panel-loading">
+						<div class="panel-heading">
+							<span class="panel-title"><i class="ion-information-circled m-r-5"></i> General Information</span>
+							<div class="pull-right">
+								<div class="btn-group m-r-5">
+									<a href="@Html.Raw(Url.RouteUrl("InterfaceUpdate"))" class="btn btn-info btn-xs"><i class="fa fa-pencil m-r-5"></i>Edit</a>
+								</div>
+								@Html.Partial("~/Views/Shared/_PanelControls.cshtml")
+							</div>
+						</div>
+						<div class="panel-body">
+							<div class="panel-loader" ng-if="interfaceObj == null"><span class="spinner-small"></span></div>
+							<div class="form-horizontal">
+								<div class="form-group m-b-0">
+									<label class="col-sm-3 control-label f-w-700">Name</label>
+									<div class="col-sm-9">
+										<p class="form-control-static" ng-bind="interfaceObj.Name" ng-show="interfaceObj.Name"></p>
+										<p class="form-control-static" ng-show="interfaceObj.Name == null || interfaceObj.Name == ''">
+											<em class="text-muted">(undefined)</em>
+										</p>
+									</div>
+								</div>
+								<div class="form-group m-b-0">
+									<label class="col-sm-3 control-label f-w-700">Display Name</label>
+									<div class="col-sm-9">
+										<p class="form-control-static" ng-bind="interfaceObj.DisplayName" ng-show="interfaceObj.DisplayName"></p>
+										<p class="form-control-static" ng-show="interfaceObj.DisplayName == null || interfaceObj.DisplayName == ''">
+											<em class="text-muted">(undefined)</em>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-inverse panel-loading">
+						<div class="panel-heading">
+							<span class="panel-title"><i class="fa fa-clone m-r-5"></i> Related Interfaces</span>
+							<div class="pull-right">
+								<div class="btn-group m-r-5">
+									<a href="@Html.Raw(Url.RouteUrl("InterfaceUpdate"))" class="btn btn-info btn-xs"><i class="fa fa-pencil m-r-5"></i>Edit</a>
+								</div>
+								@Html.Partial("~/Views/Shared/_PanelControls.cshtml")
+							</div>
+						</div>
+						<div class="panel-body border-left-1 border-right-1 border-bottom-1">
+							<div class="panel-loader" ng-if="interfaceObj.RelatedInterfaces == null"><span class="spinner-small"></span></div>
+							<table class="table-striped table table-bordered table-hover table-condensed table-responsive p-0 m-0">
+								<thead>
+									<tr>
+										<th width="50%">Display Name</th>
+										<th width="50%">Name</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="interface in interfaceObj.RelatedInterfaces">
+										<td ng-bind="interface.DisplayName"></td>
+										<td ng-bind="interface.Name"></td>
+									</tr>
+									<tr ng-if="interfaceObj.RelatedInterfaces == null">
+										<td class="" colspan="2"><em>No related interfaces</em></td>
+									</tr>
+								</tbody>
+							</table>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div class="unsortable">
+					<div class="panel panel-inverse panel-loading">
+						<div class="panel-heading">
+							<span class="panel-title"><i class="ion-erlenmeyer-flask m-r-5"></i> Attributes</span>
+							<div class="pull-right">
+								<div class="btn-group m-r-5">
+									<a href="@Html.Raw(Url.RouteUrl("InterfaceAttributeAdd"))" class="btn btn-primary btn-xs"><i class="fa fa-plus m-r-5"></i>Add</a>
+								</div>
+								@Html.Partial("~/Views/Shared/_PanelControls.cshtml")
+							</div>
+						</div>
+						<div class="panel-body">
+							<div id="interfaceattributesgrid">
+								<div data-bind="with: interfaceAttributeGrid">
+									<div data-bind="template:gridTemplate"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Buttons -->
+		<div class="row">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="pull-left">
+							<a href="@Html.Raw(Url.RouteUrl("InterfacesDisplay"))" class="btn btn-default btn-sm"><i class="fa fa-arrow-left m-r-5"></i> Interfaces</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

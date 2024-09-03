@@ -1,0 +1,25 @@
+﻿@charset "UTF-8";
+
+
+#grid-panel-body td {
+	word-break: break-all;
+}
+
+/*.grid-panel-heading {
+	line-height: 20px;
+	font-size: 14px;
+	border-bottom: 1px solid #e6e7e8
+}*/
+
+/*.grid-panel-heading-inverse {
+	font-size: 14px;
+	border-bottom: 1px solid #424242
+}*/
+
+.form-control-static {
+	/*overflow: hidden;
+	text-overflow: ellipsis;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;*/
+	word-break: break-all;
+}

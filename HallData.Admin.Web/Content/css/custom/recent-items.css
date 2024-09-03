@@ -1,0 +1,8 @@
+﻿.list-group-item:hover .list-group-icon {
+	color: #0a75de;
+	}
+
+.list-group-item:hover .badge {
+	background-color: #0a75de;
+	border: 1px solid #0a75de;
+	}

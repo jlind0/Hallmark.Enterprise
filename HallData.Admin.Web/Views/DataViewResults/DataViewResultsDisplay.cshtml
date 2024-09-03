@@ -1,0 +1,48 @@
+﻿@{
+	ViewBag.Title = "Data View Results";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles{
+	<link href="~/Content/plugins/DataTables/css/data-table.css" rel="stylesheet"/>
+	<link href="~/Content/css/pages/DisplayList.css" rel="stylesheet"/>
+}
+
+@section scripts{
+<script type="text/javascript" src="~/Scripts/app/services/dataview/classes/DataViewResultService.js"></script>
+
+<script type="text/javascript" src="~/Scripts/app/dataview/models/DataViewResultGridModel.js"></script>
+<script type="text/javascript" src="~/Scripts/app/dataview/controllers/DataViewResultGridController.js"></script>
+<script type="text/javascript" src="~/Scripts/app/dataview/initializers/DataViewResultGrid.js"></script>
+}
+
+@Html.Partial("_ActiveMenuItem", "DataViewResults")
+
+<div id="content" class="content">
+	<div class="row m-b-10">
+		<div class="col-sm-8">
+			<h1 class="page-header">
+				<i class="ion-cube m-r-5"></i>
+				@ViewBag.Title
+			</h1>
+		</div>
+	</div>
+	<div class="panel panel-inverse panel-loading">
+		<div class="panel-heading">
+			<span class="panel-title">Data Views Directory</span>
+			<div class="pull-right">
+				<div class="btn-group m-r-5">
+					<a href="@Html.Raw(Url.RouteUrl("DataViewResultsAdd"))" class="btn btn-primary btn-xs"><i class="fa fa-plus m-r-5"></i>Data View Result</a>
+				</div>
+				@Html.Partial("~/Views/Shared/_PanelControls.cshtml")
+			</div>
+		</div>
+		<div class="panel-body p-0">
+			<div class="col-sm-12" id="dataviewresultssgrid" ng-controller="dataViewResultGridController">
+				<div data-bind="with: dataViewResultGrid">
+					<div data-bind="template:gridTemplate"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

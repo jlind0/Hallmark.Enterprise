@@ -1,0 +1,32 @@
+﻿html, body {
+		height: 100%;
+	}
+
+	.ui-state-highlight {
+		height: 47px;
+		line-height: 47px;
+		background-color: #dff0d8;
+		outline: 1px dashed #d0e6be;
+		margin-bottom: 20px;
+	}
+
+	.switcher-state-on {
+		background-color: #ff4c48;
+	}
+
+	.header-caption:focus,
+	.header-caption:hover {
+		background-color: #FFF !important;
+	}
+
+	.header-caption {
+		text-overflow: ellipsis;
+		background-color: rgb(235, 235, 235);
+		border: 0;
+	}
+
+	@media (min-width: 768px) {
+		.wizard-steps {
+			position: static !important;
+		}
+	}

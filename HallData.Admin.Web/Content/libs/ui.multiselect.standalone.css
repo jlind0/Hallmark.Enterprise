@@ -1,0 +1,105 @@
+/* Custom stand-alone css for multiselect support */
+
+button.multiselect.dropdown-toggle.btn.btn-default,
+button.multiselect.dropdown-toggle.btn.btn-default:hover {
+	background: #0870cf!important;
+	border-color: #0870cf;
+	border-bottom: 0;
+	color: #fff;
+}
+
+ul.multiselect-container.dropdown-menu {
+	padding: 0;
+	border: 1px solid #d6d6d6;
+}
+
+ul.multiselect-container.dropdown-menu li a {
+	margin: 0;
+	padding: 0;
+}
+
+ul.multiselect-container.dropdown-menu li.active>a {
+	color: #242a30;
+	background: #fff;
+}
+
+ul.multiselect-container.dropdown-menu li.active > a:hover {
+	color: #fff;
+	background: #0870cf;
+}
+
+ul.multiselect-container.dropdown-menu li a label.checkbox {
+	width: 100%;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+ul.multiselect-container.dropdown-menu li a label.checkbox input[type="checkbox"] {
+	margin-left: -30px;
+}
+
+ul.dropdown-menu {
+	color: #242a30;
+	cursor: pointer;
+}
+
+ul.dropdown-menu>li:hover {
+	color: #fff;
+	background: #0870cf;
+}
+
+button#btn-filter-select,
+button#btn-filter-select:hover {
+	color: #fff;
+	background: #0870cf !important;
+	border: 0;
+}
+
+.input-group>.input-group-btn+input {
+	margin-left: 2px;
+	/*height: 32px;*/
+}
+
+select.dropdown-menu {
+	color: #242a30;
+}
+
+.ui-state-hover, .ui-state-active {
+	border-color: #5794bf;
+}
+
+.ui-state-hover {
+	background-color: #39f;
+}
+.ui-state-disabled label {
+	color: #ccc;
+}
+
+th {
+	white-space: nowrap;
+}
+
+th .ui-draggable {
+	cursor: -webkit-grab;
+	cursor: -moz-grab;
+}
+
+th .ui-draggable-dragging {
+	background: #2f3234;
+	border: #0b0b0b;
+	padding: 5px 10px;
+	white-space: nowrap;
+	min-width: 100px;
+	cursor: -webkit-grabbing;
+	cursor: -moz-grabbing;
+}
+
+.link {
+    text-decoration: none;
+    border-bottom: dashed 1px #08c;
+    cursor: pointer;
+}

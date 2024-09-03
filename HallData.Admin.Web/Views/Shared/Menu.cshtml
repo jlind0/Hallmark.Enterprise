@@ -1,0 +1,51 @@
+﻿@using System.Web
+<div id="sidebar" class="sidebar" ng-show="isSignedIn" ng-controller="menuController">
+	<!-- begin sidebar scrollbar -->
+	<div data-scrollbar="true" data-height="100%">
+		<!-- perspective dropdown -->
+		<ul class="nav">
+			<li class="nav-profile bg-black-darker f-s-15 p-0">
+				<a href="javascript:;" class="p-10">
+					<div class="image" style="-webkit-animation: fa-spin 200s infinite linear; animation: fa-spin 200s infinite linear;">
+						<img src="~/Content/img/perspective/admin.svg" />
+					</div>
+					<div class="info p-l-50">
+						<p class="perspective-label f-s-10 m-r-15" style="">TOOL</p>
+						<span class="perspective-text text-white">Admin</span>
+						@*<b class="caret pull-right"></b>*@
+					</div>
+				</a>
+			</li>
+		</ul>
+		<!-- end perspective dropdown -->
+		<!-- begin sidebar nav -->
+		<ul class="nav">
+			<li ng-class="{active:vm.isActive('Home')}">
+				<a href="@Url.RouteUrl("DisplayAdminDashboard")">
+					<i class="fa fa-dashboard"></i> <span>Dashboard</span>
+				</a>
+			</li>
+			<li ng-class="{active:vm.isActive('Interfaces')}">
+				<a href="@Url.RouteUrl("InterfacesDisplay")">
+					<i class="ion-compass"></i> <span>Interfaces</span>
+				</a>
+			</li>
+			<li ng-class="{active:vm.isActive('DataViews')}">
+				<a href="@Url.RouteUrl("DataViewsDisplay")">
+					<i class="ion-cube"></i> <span>Data Views</span>
+				</a>
+			</li>
+			<li ng-class="{active:vm.isActive('ApplicationViews')}">
+				<a href="@Url.RouteUrl("ApplicationViewsDisplay")">
+					<i class="ion-ios-albums"></i> <span>Application Views</span>
+				</a>
+			</li>
+			<!-- begin sidebar minify button -->
+			<li class="sidebar-minify-btn-container"><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+			<!-- end sidebar minify button -->
+		</ul>
+		<!-- end sidebar nav -->
+	</div>
+	<!-- end sidebar scrollbar -->
+</div>
+<div class="sidebar-bg"></div>

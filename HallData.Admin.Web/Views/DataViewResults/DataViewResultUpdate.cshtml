@@ -1,0 +1,85 @@
+﻿@{
+	ViewBag.Title = "Update Data View Result";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles{
+	<link href="~/Content/plugins/DataTables/css/data-table.css" rel="stylesheet"/>
+	<link href="~/Content/css/pages/DisplayList.css" rel="stylesheet"/>
+}
+
+@section scripts{
+	<script type="text/javascript" src="~/Scripts/app/services/dataviews/classes/DataViewService.js"></script>
+
+	<script type="text/javascript" src="~/Scripts/app/dataviews/controllers/DataViewUpdateController.js"></script>
+	@*<script type="text/javascript" src="~/Scripts/app/dataviews/directives/formatCode.js"></script>
+	<script type="text/javascript" src="~/Scripts/app/dataviews/directives/generateCode.js"></script>*@
+	<script type="text/javascript" src="~/Scripts/app/dataviews/initializers/DataViewUpdate.js"></script>
+}
+
+<!--validation-->
+<script type="text/ng-template" id="validation">
+	<ng-message when="minlength">This field is too short</ng-message>
+	<ng-message when="maxlength">This field is too long</ng-message>
+	<ng-message when="url" class="text-primary">Enter a valid url ex. http://www.halldata.com</ng-message>
+	<ng-message when="email">Enter a valid email address ex. my_email@domain.com</ng-message>
+</script>
+
+@Html.Partial("_ActiveMenuItem", "DataViews")
+
+<div id="content" class="content">
+	<div ng-controller="dataViewResultUpdateController">
+		<div class="row m-b-10">
+			<div class="col-sm-8">
+				<h1 class="page-header">
+					<i class="ion-stats-bars m-r-5"></i>
+					@ViewBag.Title
+				</h1>
+			</div>
+		</div>
+		<div class="panel panel-inverse panel-loading form-horizontal">
+			<div class="panel-heading">
+				<span class="panel-title">General Information</span>
+				<div class="pull-right">
+					@Html.Partial("~/Views/Shared/_PanelControls.cshtml")
+				</div>
+			</div>
+			<div id="dataViewResultMainInfo" class="panel-body" data-validation="name">
+				<form name="updateDataViewResult" ng-submit="vm.update(updateDataViewResult.$valid)" novalidate>
+
+					<div class="form-group">
+						<label for="inputName" class="col-sm-2 control-label">Name *</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="inputName" name="Name" size="4" placeholder="Name (Required)" value="" autofocus ng-model="updateDataViewResult.Name" ng-maxlength="500" ng-class="{ 'parsley-error': updateDataViewResult.Name.$dirty && updateDataViewResult.Name.$invalid||updateDataViewResult.$submitted && updateDataViewResult.Name.$invalid}" required>
+							<!--validation-->
+							<ng-messages for="updateDataViewResult.Name.$error" class="parsley-errors-list filled parsley-required" role="alert">
+								<div ng-include src="'validation'"></div>
+							</ng-messages>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="inputDataViewResultId" class="col-sm-2 control-label">Data View Result ID *</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="inputDataViewResultId" name="DataViewResultId" placeholder="Data View ID (Required)" value="" ng-model="updateDataView.DataViewId" ng-maxlength="500" ng-class="{ 'parsley-error': updateDataViewResult.DataViewId.$dirty && updateDataViewResult.DataViewId.$invalid||updateDataViewResult.$submitted && updateDataViewResult.DataViewId.$invalid}" required>
+							<!--validation-->
+							<ng-messages for="updateDataViewResult.DataViewResultId.$error" class="parsley-errors-list filled parsley-required" role="alert">
+								<div ng-include src="'validation'"></div>
+							</ng-messages>
+						</div>
+					</div>
+
+					<div class="form-group dark">
+						<div class="col-sm-offset-2 col-sm-10">
+							<div class="btn-group">
+								<button type="submit" class="btn btn-primary btn-flat" ng-disabled="isSaving" data-loading-text="<i class='fa fa-fw fa-spinner fa-spin'></i> Saving...">Update Data View</button>
+							</div>
+							&nbsp;
+							<a href="@Html.Raw(Url.RouteUrl("DataViewResultsDetailDisplay"))" class="btn btn-default reset">Cancel</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

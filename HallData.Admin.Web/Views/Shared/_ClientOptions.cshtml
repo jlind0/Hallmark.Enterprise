@@ -1,0 +1,8 @@
+﻿@if (ViewBag.ClientList != null)
+{
+	<option></option>
+	foreach (var client in ViewBag.ClientList)
+	{
+		<option value="@Html.Raw(client.ClientGuid)">@Html.Raw(client.ClientName)</option>
+	}
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 128 128" enable-background="new 0 0 128 128" xml:space="preserve">
+<g>
+	<g>
+		<path fill="#2C70B7" d="M128,120c0,4.4-3.6,8-8,8H8c-4.4,0-8-3.6-8-8V24.2c0-4.4,3.6-8,8-8h112c4.4,0,8,3.6,8,8V120z"/>
+		<polygon fill="#CCCBCB" points="3.5,119.5 63.6,123.5 63.6,11.7 3.5,8 		"/>
+		<polygon fill="#A9AAAA" points="123.6,119.5 63.6,123.5 63.6,11.7 123.6,8 		"/>
+		<polygon fill="#FFFFFF" points="7.9,115.5 63.6,123.5 63.6,8 7.9,0 		"/>
+		<g opacity="0.2">
+			<polygon points="15.9,59.7 55.6,67.7 55.6,63.7 15.9,55.8 			"/>
+			<polygon points="15.9,71.7 55.6,79.7 55.6,75.7 15.9,67.7 			"/>
+			<polygon points="15.9,83.6 55.6,91.6 55.6,87.6 15.9,79.7 			"/>
+			<polygon points="15.9,95.6 55.6,103.6 55.6,99.6 15.9,91.6 			"/>
+		</g>
+		<polygon fill="#EEEDED" points="119.2,115.5 63.6,123.5 63.6,8 119.2,0 		"/>
+		<g opacity="0.2">
+			<polygon points="111.2,59.7 71.5,67.7 71.5,63.7 111.2,55.8 			"/>
+			<polygon points="111.2,71.7 71.5,79.7 71.5,75.7 111.2,67.7 			"/>
+			<polygon points="111.2,83.6 71.5,91.6 71.5,87.6 111.2,79.7 			"/>
+			<polygon points="111.2,95.6 71.5,103.6 71.5,99.6 111.2,91.6 			"/>
+		</g>
+	</g>
+	<polygon fill="#05569B" points="15.6,19.9 15.6,47.8 55.6,55.8 55.6,27.9 	"/>
+	<polygon fill="#428AC9" points="71.5,27.9 71.5,55.8 111.5,47.8 111.5,19.9 	"/>
+</g>
+</svg>

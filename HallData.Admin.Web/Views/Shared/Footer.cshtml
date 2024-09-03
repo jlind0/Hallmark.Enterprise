@@ -1,0 +1,10 @@
+﻿@if (ViewBag.Session != null)
+{
+	<div id="divFooter">
+		<div>Version: 3.00.11</div>
+		<div>IP Address: @Request.UserHostAddress</div>
+		<div>User Name: @((ViewBag.Session).User.UserName) @Html.ActionLink("Log Out", "LogOut", "Accounts", null, null)</div>
+		<div>Organization: @((ViewBag.Session).User.ClientService.Name)</div>
+		<div>Last login date: @((ViewBag.Session).User.LastLoginDateTime)</div>
+	</div>
+}

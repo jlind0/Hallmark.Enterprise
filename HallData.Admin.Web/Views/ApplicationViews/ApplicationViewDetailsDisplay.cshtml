@@ -1,0 +1,56 @@
+﻿@{
+	ViewBag.Title = "Application View Details";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles{
+	<link href="~/Content/plugins/DataTables/css/data-table.css" rel="stylesheet"/>
+	<link href="~/Content/css/pages/DisplayList.css" rel="stylesheet"/>
+}
+
+@section scripts{
+	<script type="text/javascript" src="~/Scripts/app/services/party/classes/PartyService.js"></script>
+	<script type="text/javascript" src="~/Scripts/app/services/person/classes/PersonService.js"></script>
+	<script type="text/javascript" src="~/Scripts/app/services/user/classes/UserService.js"></script>
+
+	<script type="text/javascript" src="~/Scripts/app/shared/models/DeliveryMethodTypeFilter.js"></script>
+	<script type="text/javascript" src="~/Scripts/app/shared/models/FrequencyTypeFilter.js"></script>
+	<script type="text/javascript" src="~/Scripts/app/shared/models/TierTypeFilter.js"></script>
+	<script type="text/javascript" src="~/Scripts/app/shared/models/StatusTypeFilter.js"></script>
+	<script type="text/javascript" src="~/Scripts/app/shared/models/PartyTypeFilter.js"></script>
+
+	<script type="text/javascript" src="~/Scripts/app/admin/user/models/UserGridModel.js"></script>
+	<script type="text/javascript" src="~/Scripts/app/admin/user/controllers/UserGridController.js"></script>
+	<script type="text/javascript" src="~/Scripts/app/admin/user/initializers/UserGrid.js"></script>
+}
+
+@Html.Partial("_ActiveMenuItem", "ApplicationViews")
+
+<div id="content" class="content">
+	<div class="row m-b-10">
+		<div class="col-sm-8">
+			<h1 class="page-header">
+				<i class="ion-ios-albums m-r-5"></i>
+				@ViewBag.Title
+			</h1>
+		</div>
+	</div>
+	<div class="panel panel-inverse panel-loading">
+		<div class="panel-heading">
+			<span class="panel-title">Application View Directory</span>
+			<div class="pull-right">
+				<div class="btn-group m-r-5">
+					<a href="#" class="btn btn-primary btn-xs"><i class="fa fa-plus m-r-5"></i>Application View</a>
+				</div>
+				@Html.Partial("~/Views/Shared/_PanelControls.cshtml")
+			</div>
+		</div>
+		<div class="panel-body p-0">
+			<div class="col-sm-12" id="usersgrid" ng-controller="userGridController">
+				@*<div data-bind="with: userGrid">
+					<div data-bind="template:gridTemplate"></div>
+				</div>*@
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,174 @@
+﻿@{
+	ViewBag.Title = "Update User";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles {
+	<link href="~/Content/plugins/parsley/src/parsley.css" rel="stylesheet" />
+}
+
+@section scripts{
+	<script type="text/javascript" src="~/Scripts/app/services/party/classes/PartyService.js"></script>
+	<script type="text/javascript" src="~/Scripts/app/services/person/classes/PersonService.js"></script>
+	<script type="text/javascript" src="~/Scripts/app/services/user/classes/UserService.js"></script>
+	<script type="text/javascript" src="~/Scripts/app/services/category/classes/CategoryService.js"></script>
+	<script type="text/javascript" src="~/Scripts/app/admin/user/controllers/UserUpdateController.js"></script>
+	<script type="text/javascript" src="~/Scripts/app/admin/user/initializers/UserUpdate.js"></script>
+}
+<!--validation-->
+<script type="text/ng-template" id="validation">
+	<ng-message when="required">This field is required</ng-message>
+	<ng-message when="minlength">This field is too short</ng-message>
+	<ng-message when="maxlength">This field is too long</ng-message>
+	<ng-message when="url" class="text-primary">Enter a valid url ex. http://www.halldata.com</ng-message>
+	<ng-message when="email">Enter a valid email address ex. my_email@domain.com</ng-message>
+</script>
+
+@Html.Partial("_ActiveMenuItem", "Dashboard")
+
+<div id="content" class="content">
+	<div ng-controller="userUpdateController">
+		<div class="row m-b-10">
+			<div class="col-md-6 col-sm-12 hidden-xs col-md-push-6">
+				<ol class="breadcrumb pull-right">
+					<li><a href="@Html.Raw(Url.RouteUrl("DisplayAdminDashboard"))">Admin</a></li>
+					<li class=""><a href="@Html.Raw(Url.RouteUrl("DisplayAdminDashboard"))">Users</a></li>
+					<li class=""><a href="@Html.Raw(Url.RouteUrl("DisplayUserDetails"))">{{user.UserName}}</a></li>
+					<li class="active">Update</li>
+				</ol>
+			</div>
+			<div class="col-md-6 col-sm-12 col-md-pull-6">
+				<h1 class="page-header">
+					<i class="fa fa-fw fa-user m-r-5"></i>
+					@ViewBag.Title
+				</h1>
+			</div>
+		</div>
+
+		<div class="panel panel-inverse panel-loading form-horizontal">
+			<div class="panel-heading">
+				<span class="panel-title">General Information</span>
+				<div class="pull-right">
+					@Html.Partial("~/Views/Shared/_PanelControls.cshtml")
+				</div>
+			</div>
+			<div id="userMainInfo" class="panel-body" data-validation="name">
+				<div class="panel-loader" ng-if="user == null"><span class="spinner-small"></span></div>
+				<div>
+					<!-- Update User Form -->
+					<form name="updateUser" ng-submit="vm.update(updateUser.$valid)" novalidate>
+
+						<div class="form-group">
+							<label for="inputUserName" class="col-sm-2 control-label">User Name *</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="inputUserName" name="UserName" placeholder="User Name (Required)" value="" autofocus ng-model="user.UserName" ng-maxlength="50" ng-class="{ 'parsley-error': updateUser.UserName.$dirty && updateUser.UserName.$invalid || updateUser.$submitted && updateUser.UserName.$invalid}" required>
+								<!--validation-->
+								<ng-messages for="updateUser.UserName.$error" class="parsley-errors-list filled parsley-required" role="alert">
+									<div ng-include src="'validation'"></div>
+								</ng-messages>
+							</div>
+						</div>
+
+						@*<div class="form-group">
+								<label for="inputPassword" class="col-sm-2 control-label">Password *</label>
+								<div class="col-sm-10">
+								<input type="password" class="form-control" id="inputPassword" name="Password" placeholder="Password (Required)" value="" ng-model="user.Password" ng-maxlength="50" ng-class="{ 'parsley-error': updateUser.Password.$dirty && updateUser.Password.$invalid || updateUser.$submitted && updateUser.Password.$invalid}" required>
+									<!--validation-->
+									<ng-messages for="updateUser.Password.$error" class="parsley-errors-list filled parsley-required" role="alert">
+										<div ng-include src="'validation'"></div>
+									</ng-messages>
+								</div>
+							</div>*@
+						<hr/>
+						<div class="form-group">
+							<label for="inputFirstName" class="col-sm-2 control-label">First Name *</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="inputFirstName" name="FirstName" placeholder="First Name (Required)" value="" ng-model="user.FirstName" ng-maxlength="50" ng-class="{ 'parsley-error': updateUser.FirstName.$dirty && updateUser.FirstName.$invalid || updateUser.$submitted && updateUser.FirstName.$invalid}" required>
+								<!--validation-->
+								<ng-messages for="updateUser.FirstName.$error" class="parsley-errors-list filled parsley-required" role="alert">
+									<div ng-include src="'validation'"></div>
+								</ng-messages>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputLastName" class="col-sm-2 control-label">Last Name *</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="inputLastName" name="LastName" placeholder="Last Name (Required)" value="" ng-model="user.LastName" ng-maxlength="50" ng-class="{ 'parsley-error': updateUser.LastName.$dirty && updateUser.LastName.$invalid || updateUser.$submitted && updateUser.LastName.$invalid}" required>
+								<!--validation-->
+								<ng-messages for="updateUser.LastName.$error" class="parsley-errors-list filled parsley-required" role="alert">
+									<div ng-include src="'validation'"></div>
+								</ng-messages>
+							</div>
+						</div>
+						<div class="form-group dark">
+							<label for="inputEmail" class="col-sm-2 control-label">Email Address *</label>
+							<div class="col-sm-10">
+								<input type="email" class="form-control" id="inputEmail" name="Email" placeholder="Email Address (Required)" value="" ng-model="user.PrimaryEmail.EmailAddress" ng-maxlength="150" ng-class="{ 'parsley-error': updateUser.Email.$dirty && updateUser.Email.$invalid || updateUser.$submitted && updateUser.Email.$invalid}" required>
+								<!--validation-->
+								<ng-messages for="updateUser.Email.$error" class="parsley-errors-list filled parsley-required" role="alert">
+									<div ng-include src="'validation'"></div>
+								</ng-messages>
+							</div>
+						</div>
+						<hr/>
+						@*<div class="form-group">
+								<label for="inputPerspective" class="col-sm-2 control-label">Perspective(s) *</label>
+								<div class="col-sm-10">
+									<multiselect class="input-xlarge" multiple="true"
+												 ng-model="user.PartyCategories"
+												 options="Category.Name for Category in categories"
+												 change="selected()"></multiselect>
+								</div>
+							</div>*@
+						@*<div class="form-group">
+							<label for="inputPartyCategories" class="col-sm-2 control-label">Perspective(s) *</label>
+							<div class="col-sm-10">
+								<multiselect class="" multiple="true"
+											 ng-class="{ 'parseley-error': updateUser.$submitted && updateUser.PartyCategories.$invalid}"
+											 ng-model="user.PartyCategories"
+											 options="Category.Name for Category in categories"
+											 change="selected()" required></multiselect>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputDefaultPartyCategory" class="col-sm-2 control-label">Default Perspective *</label>
+							<div class="col-sm-10">
+								<select type="text" class="form-control" id="inputDefaultPartyCategory" name="DefaultPartyCategory" ng-class="{'parsley-error': addUser.$submitted && addUser.DefaultPartyCategory.$invalid}" value="" ng-model="user.DefaultPartyCategory" ng-options="Category.Name for Category in user.PartyCategories track by Category.Id" required>
+									<option value="" hidden></option>
+								</select>
+								<ng-messages for="addUser.DefaultPartyCategory.$error" class="parsley-errors-list filled parsley-required" role="alert">
+									<div ng-include src="'validation'"></div>
+								</ng-messages>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputStatus" class="col-sm-2 control-label">Status *</label>
+							<div class="col-sm-10">
+								<select type="text" class="form-control" id="inputStatus" name="Status" ng-class="{'parsley-error': addUser.$submitted && addUser.Status.$invalid}" value="" ng-model="user.Status" ng-options="Status.Name for Status in statuses track by Status.StatusTypeId" required>
+									<option value="" hidden></option>
+								</select>
+								<div ng-if="user.Status.StatusTypeId !== 1" class="text-primary" role="alert">
+									User must be set to "Enabled" in order to log in.
+								</div>
+								<ng-messages for="addUser.Status.$error" class="parsley-errors-list filled parsley-required" role="alert">
+									<div ng-include src="'validation'"></div>
+								</ng-messages>
+							</div>
+						</div>*@
+
+						<div class="form-group dark">
+							<div class="col-sm-offset-2 col-sm-10">
+								<div class="btn-group">
+									<button type="submit" class="btn btn-primary btn-flat" ng-disabled="isSaving" data-loading-text="<i class='fa fa-fw fa-spinner fa-spin'></i> Saving...">Update User</button>
+								</div>
+								&nbsp;
+								<a href="@Html.Raw(Url.RouteUrl("DisplayUserDetails"))" class="btn btn-default reset">Cancel</a>
+							</div>
+						</div>
+					</form>
+					<!-- /Update User Form -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

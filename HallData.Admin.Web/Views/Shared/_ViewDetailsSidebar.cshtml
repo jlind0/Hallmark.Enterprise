@@ -1,0 +1,50 @@
+﻿<div class="mail-nav hide">
+
+	<div class="compose-btn no-border-b no-padding">
+		@*<div class="btn-group btn-block hide">
+			<button type="button" class="btn btn-primary btn-labeled btn-block btn-flat dropdown-toggle" data-toggle="dropdown"><i class="btn-label fa fa-pencil-square-o"></i> Add New Info &nbsp;<i class="fa fa-caret-down"></i></button>
+
+			<ul id="new-contact-menu" class="dropdown-menu">
+				<li>
+					<a href="@Url.Action("/", "AddClientAddress", @Model)">Address</a>
+				</li>
+				<li>
+					<a href="@Url.Action("/", "AddClientPhone", @Model)">Phone Number</a>
+				</li>
+				<li>
+					<a href="#">Fax Number</a>
+					<ul>
+						<li><a href="#">Fax</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Email Address</a>
+					<ul>
+						<li><a href="#">Email</a></li>
+					</ul>
+				</li>
+			</ul>  / .dropdown-menu 
+		</div>*@
+	</div> <!-- / .compose-btn -->
+
+	<div class="navigation">
+		<div class="mail-nav-header" style="margin-top: 10px;">Client Information</div>
+		<ul class="sections">
+			<li class="active"><a href="#"><i class="m-nav-icon fa fa-info"></i>Client Overview</a></li>
+			<li><a href="#"><i class="m-nav-icon fa fa-suitcase"></i>Business Units</a></li>
+			<li class="divider"></li>
+			<div class="mail-nav-header" style="margin-top: 10px;">Contact Information</div>
+			<li><a href="#"><i class="m-nav-icon fa fa-home"></i>Addresses <span class="label pull-right">3</span></a></li>
+			<li><a href="#"><i class="m-nav-icon fa fa-phone"></i>Phone Numbers <span class="label pull-right">3</span></a></li>
+			<li><a href="#"><i class="m-nav-icon fa fa-fax"></i>Fax Numbers <span class="label pull-right">1</span></a></li>
+			<li><a href="#"><i class="m-nav-icon fa fa-at"></i>Email Addresses <span class="label pull-right">1</span></a></li>
+			<li class="divider"></li>
+			<div class="mail-nav-header" style="margin-top: 10px;">Contact Types</div>
+			<li><a href="#"><div class="mail-nav-lbl bg-pa-purple"></div>Primary</a></li>
+			<li><a href="#"><div class="mail-nav-lbl bg-success"></div>Billing</a></li>
+			<li><a href="#"><div class="mail-nav-lbl bg-info"></div>Shipping</a></li>
+			<li><a href="#"><div class="mail-nav-lbl bg-warning"></div>Support</a></li>
+			<li><a href="#"><div class="mail-nav-lbl bg-default"></div>Other</a></li>
+		</ul>
+	</div>
+</div>

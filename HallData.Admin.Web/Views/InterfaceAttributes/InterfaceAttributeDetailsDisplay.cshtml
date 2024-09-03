@@ -1,0 +1,83 @@
+﻿@{
+	ViewBag.Title = "Interface Details";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles{
+	<link href="~/Content/plugins/DataTables/css/data-table.css" rel="stylesheet" />
+	<link href="~/Content/css/pages/DisplayList.css" rel="stylesheet" />
+}
+
+@section scripts{
+	<script type="text/javascript" src="~/Scripts/app/services/interface/classes/InterfaceService.js"></script>
+
+	<script type="text/javascript" src="~/Scripts/app/interface/controllers/InterfaceDisplayController.js"></script>
+	<script type="text/javascript" src="~/Scripts/app/interface/initializers/InterfaceDisplay.js"></script>
+}
+
+@Html.Partial("_ActiveMenuItem", "Interfaces")
+
+<div id="content" class="content">
+	<div ng-controller="interfaceDisplayController">
+		<div class="row m-b-10">
+			<div class="col-sm-8">
+				<h1 class="page-header">
+					<i class="ion-compass m-r-5"></i>
+					<span ng-bind="interfaceObj.Name"></span>
+				</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="unsortable">
+					<div class="panel panel-inverse panel-loading">
+						<div class="panel-heading">
+							<span class="panel-title">General Information</span>
+							<div class="pull-right">
+								<div class="btn-group m-r-5">
+									<a href="@Html.Raw(Url.RouteUrl("InterfaceAttributeUpdate"))" class="btn btn-info btn-xs"><i class="fa fa-pencil m-r-5"></i>Edit</a>
+								</div>
+								@Html.Partial("~/Views/Shared/_PanelControls.cshtml")
+							</div>
+						</div>
+						<div class="panel-body">
+							<div class="panel-loader" ng-if="interfaceObj == null"><span class="spinner-small"></span></div>
+							<div class="form-horizontal">
+								<div class="form-group m-b-0">
+									<label class="col-sm-3 control-label f-w-700">Name</label>
+									<div class="col-sm-9">
+										<p class="form-control-static" ng-bind="interfaceObj.Name" ng-show="interfaceObj.Name"></p>
+										<p class="form-control-static" ng-show="interfaceObj.Name == null || interfaceObj.Name == ''">
+											<em class="text-muted">(undefined)</em>
+										</p>
+									</div>
+								</div>
+								<div class="form-group m-b-0">
+									<label class="col-sm-3 control-label f-w-700">Display Name</label>
+									<div class="col-sm-9">
+										<p class="form-control-static" ng-bind="interfaceObj.DisplayName" ng-show="interfaceObj.DisplayName"></p>
+										<p class="form-control-static" ng-show="interfaceObj.DisplayName == null || interfaceObj.DisplayName == ''">
+											<em class="text-muted">(undefined)</em>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<!-- Buttons -->
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="pull-left">
+							<a href="@Html.Raw(Url.RouteUrl("InterfaceDetailsDisplay"))" class="btn btn-default btn-sm"><i class="fa fa-arrow-left m-r-5"></i> Interface Details</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 128 128" enable-background="new 0 0 128 128" xml:space="preserve">
+<g id="Calendar_2">
+	<path fill="#4AB5D5" d="M128,120c0,4.4-3.4,8-7.5,8H7.5c-4.1,0-7.5-3.6-7.5-8V8c0-4.4,3.4-8,7.5-8h113c4.1,0,7.5,3.6,7.5,8V120z"/>
+	<g>
+		<path fill="#EEEDED" d="M117,8H13c-2.2,0-4,1.4-4,3.6V59h111V11.6C120,9.4,119.2,8,117,8z"/>
+		<path fill="#EEEDED" d="M9,115.6c0,2.2,1.7,3.4,4,3.4h72l35-35.4V68H9V115.6z"/>
+	</g>
+	<g>
+		<path fill="#265B6B" d="M16,47.6c-2.2,0-4,1.8-4,4v20c0,2.2,1.8,4,4,4c2.2,0,4-1.8,4-4v-20C20,49.4,18.2,47.6,16,47.6z"/>
+		<path fill="#265B6B" d="M113,47.6c-2.2,0-4,1.8-4,4v20c0,2.2,1.8,4,4,4c2.2,0,4-1.8,4-4v-20C117,49.4,115.2,47.6,113,47.6z"/>
+	</g>
+	<g>
+		<polygon fill="#3788A0" points="36,24 36,40 72,40 72,40.6 63.3,59 82.4,59 93,41.4 93,24 		"/>
+		<polygon fill="#3788A0" points="37.9,103 56.6,103 76.3,68 57.3,68 		"/>
+	</g>
+	<polygon opacity="0.1" points="85,119 85,87.6 53,119 	"/>
+	<path fill="#3788A0" d="M121,84H89c-2.2,0-4,1.4-4,3.6v32L121,84z"/>
+</g>
+</svg>

@@ -1,0 +1,76 @@
+﻿@{
+	ViewBag.Title = "Add Data View Result";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles{
+	<link href="~/Content/plugins/DataTables/css/data-table.css" rel="stylesheet"/>
+	<link href="~/Content/css/pages/DisplayList.css" rel="stylesheet"/>
+}
+
+@section scripts{
+	<script type="text/javascript" src="~/Scripts/app/services/dataviews/classes/DataViewService.js"></script>
+
+	<script type="text/javascript" src="~/Scripts/app/dataviews/controllers/DataViewAddController.js"></script>
+	@*<script type="text/javascript" src="~/Scripts/app/dataviews/directives/formatCode.js"></script>
+		<script type="text/javascript" src="~/Scripts/app/dataviews/directives/generateCode.js"></script>*@
+	<script type="text/javascript" src="~/Scripts/app/dataviews/initializers/DataViewAdd.js"></script>
+}
+
+@Html.Partial("_ActiveMenuItem", "DataViews")
+
+<div id="content" class="content">
+	<div ng-controller="dataViewResultAddController">
+		<div class="row m-b-10">
+			<div class="col-sm-8">
+				<h1 class="page-header">
+					<i class="ion-stats-bars m-r-5"></i>
+					@ViewBag.Title
+				</h1>
+			</div>
+		</div>
+		<div class="panel panel-inverse panel-loading form-horizontal">
+			<div class="panel-heading">
+				<span class="panel-title">General Information</span>
+				<div class="pull-right">
+					@Html.Partial("~/Views/Shared/_PanelControls.cshtml")
+				</div>
+			</div>
+			<div id="DataViewResultMainInfo" class="panel-body" data-validation="name">
+				<form name="addDataViewResult" ng-submit="vm.add(addDataViewResult.$valid)" novalidate>
+
+					<div class="form-group">
+						<label for="inputName" class="col-sm-2 control-label">Name *</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="inputName" name="Name" size="4" placeholder="Name (Required)" value="" autofocus ng-model="addDataViewResult.Name" ng-maxlength="500" ng-class="{ 'parsley-error': addDataViewResult.Name.$dirty && addDataViewResult.Name.$invalid||addDataViewResult.$submitted && addDataViewResult.Name.$invalid}" required>
+							<!--validation-->
+							<ng-messages for="addDataViewResult.Name.$error" class="parsley-errors-list filled parsley-required" role="alert">
+								<div ng-include src="'validation'"></div>
+							</ng-messages>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="inputDataViewResultId" class="col-sm-2 control-label">Data View ID *</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="inputDataViewResultId" name="DataViewResultId" placeholder="Data View ID (Required)" value="" ng-model="addDataViewResult.DataViewResultId" ng-maxlength="500" ng-class="{ 'parsley-error': addDataViewResult.DataViewResultId.$dirty && addDataViewResult.DataViewResultId.$invalid||addDataViewResult.$submitted && addDataViewResult.DataViewResultId.$invalid}" required>
+							<!--validation-->
+							<ng-messages for="addDataViewResult.DataViewResultId.$error" class="parsley-errors-list filled parsley-required" role="alert">
+								<div ng-include src="'validation'"></div>
+							</ng-messages>
+						</div>
+					</div>
+					<div class="form-group dark">
+						<div class="col-sm-offset-2 col-sm-10">
+							<div class="btn-group">
+								<button type="submit" class="btn btn-primary btn-flat" ng-disabled="isSaving" data-loading-text="<i class='fa fa-fw fa-spinner fa-spin'></i> Saving...">Add Data View</button>
+							</div>
+							&nbsp;
+							<a href="@Html.Raw(Url.RouteUrl("DataViewDetailsDisplay"))" class="btn btn-default reset">Cancel</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
